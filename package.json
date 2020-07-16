@@ -1,5 +1,5 @@
 {
-  "name": "renderless-components",
+  "name": "@nutshelllab/renderless-components",
   "version": "1.0.1-0",
   "description": "Vuejs renderless components librairie",
   "main": "index.js",
