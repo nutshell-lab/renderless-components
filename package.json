@@ -1,0 +1,25 @@
+{
+  "name": "renderless-components",
+  "version": "1.0.0",
+  "description": "Vuejs renderless components librairie",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "release": "np",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vuejs",
+    "renderless",
+    "components",
+    "nutshell"
+  ],
+  "author": "Nutshell Lab",
+  "license": "ISC",
+  "devDependencies": {
+    "np": "^6.3.2"
+  }
+}
