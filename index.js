@@ -1,5 +1,1 @@
-const Selector = require('./lib/Selector.vue')
-
-module.exports = {
-  Selector
-}
+module.exports.Selector = require('./lib/Selector.vue').default

@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <slot :list="items" :length="length" :selectItem="select" :unselectItem="unselect" />
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -29,6 +23,14 @@ export default {
     unselect(x) {
       this.items = this.items.filter(i => !this.sameId(x)(i))
     }
+  },
+  render() {
+    return this.$scopedSlots.default({
+      list: this.items,
+      length: this.length,
+      selectItem: this.select,
+      unselectItem: this.unselect
+    });
   }
 }
 </script>
