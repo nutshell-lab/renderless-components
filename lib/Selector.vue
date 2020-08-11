@@ -22,6 +22,9 @@ export default {
     },
     unselect(x) {
       this.items = this.items.filter(i => !this.sameId(x)(i))
+    },
+    reset() {
+      this.items = []
     }
   },
   render() {
@@ -29,7 +32,8 @@ export default {
       list: this.items,
       length: this.length,
       selectItem: this.select,
-      unselectItem: this.unselect
+      unselectItem: this.unselect,
+      reset: this.reset
     });
   }
 }
