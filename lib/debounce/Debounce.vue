@@ -21,9 +21,7 @@ export default {
     value(v) {
       this.input(v)
     },
-    debounced(newValue, oldValue) {
-      if (newValue !== oldValue) patchValueDebounced(newValue)
-    },
+    debounced: patchValueDebounced,
   },
 
   mounted() {
@@ -32,7 +30,7 @@ export default {
 
   methods: {
     input(val) {
-      this.debounced = val
+      if (val !== this.debounced) this.debounced = val
     },
   },
 
