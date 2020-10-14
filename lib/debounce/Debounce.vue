@@ -18,11 +18,16 @@ export default {
   }),
 
   watch: {
-    debounced: patchValueDebounced,
+    value(v) {
+      this.input(v)
+    },
+    debounced(newValue, oldValue) {
+      if (newValue !== oldValue) patchValueDebounced(newValue)
+    },
   },
 
   mounted() {
-    this.debounced = this.value
+    this.input(this.value)
   },
 
   methods: {
