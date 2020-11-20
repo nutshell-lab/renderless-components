@@ -8,7 +8,7 @@ const patchValueDebounced = debounce(function (value) {
 export default {
   props: {
     value: {
-      type: [Object, String, Number, Boolean],
+      type: [Object, String, Number, Boolean, Array],
       default: null,
     },
   },
