@@ -1,10 +1,6 @@
 <script>
 import debounce from './debounce'
 
-const patchValueDebounced = debounce(function (value) {
-  this.$emit('input', value)
-}, 200)
-
 export default {
   props: {
     value: {
@@ -21,11 +17,21 @@ export default {
     value(v) {
       this.input(v)
     },
-    debounced: patchValueDebounced,
+    debounced(v) {
+      this.patchValueDebounced(v)
+    },
   },
 
   mounted() {
     this.input(this.value)
+  },
+
+  computed: {
+    patchValueDebounced() {
+      return debounce(function (value) {
+        this.$emit('input', value)
+      }, 200)
+    },
   },
 
   methods: {
